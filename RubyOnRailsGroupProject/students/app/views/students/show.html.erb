@@ -1,0 +1,27 @@
+<p>
+  <strong>Student_ID:</strong>
+    <%= @student.studentid %>
+</p>
+
+<p>
+  <strong>First_Name:</strong>
+    <%= @student.fname %>
+</p>
+ 
+<p>
+  <strong>Last_Name:</strong>
+    <%= @student.lname %>
+</p>
+
+<p>
+  <strong>Program_Status:</strong>
+    <%= @student.status %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+    <%= @student.comments %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

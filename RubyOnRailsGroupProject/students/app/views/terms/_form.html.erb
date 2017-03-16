@@ -1,0 +1,36 @@
+<%= form_for @term do |f| %>
+
+  <% if @term.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@term.errors.count, "error") %> prohibited
+        this term from being saved:
+      </h2>
+      <ul>
+        <% @term.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+  <%= f.label :Term_Name %>:
+  <%= f.radio_button :name, 'Fall' %> 
+  <%= f.label :fall %>
+  <%= f.radio_button :name, 'Winter' %>
+  <%= f.label :winter %>
+  <%= f.radio_button :name, 'Spring' %> 
+  <%= f.label :spring %>
+</p>
+
+<p>
+  <%= f.label :Year %>:
+  <%= f.select :year, (2015..2020) %>
+</p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

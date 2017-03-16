@@ -1,0 +1,47 @@
+<p>
+  <strong>ID:</strong>
+    <%= @user.id %>
+</p>
+
+<p>
+  <strong>First_Name:</strong>
+    <%= @user.first_name %>
+</p>
+ 
+<p>
+  <strong>Last_Name:</strong>
+    <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+    <%= @user.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+    <%= @user.phone %>
+</p>
+
+<p>
+  <strong>Office:</strong>
+  <%= @user.office %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @user.department %>
+</p>
+
+<p>
+  <strong>is Faculty:</strong>
+  <%= @user.isFaculty %>
+</p>
+
+<p>
+  <strong>is Admin:</strong>
+  <%= @user.isAdmin %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

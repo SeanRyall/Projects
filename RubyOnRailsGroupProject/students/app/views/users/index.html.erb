@@ -1,0 +1,63 @@
+<div class="container-fluid">
+
+  <header><img src="http://i.imgur.com/jA8yygk.png" class="img-responsive" alt="Responsive image"></header>
+
+
+  <h1>Nova Scotia Community College</h1>
+
+  <ul class="nav nav-tabs">
+    <li><a href="/">Home</a></li>
+    <li class="active"><a href="/users">Users</a></li>
+    <li><a href="/courses">Courses</a></li>
+    <li><a href="/terms">Terms</a></li>
+    <li><a href="/students">Students</a></li>
+  </ul>
+
+
+  <h2>Users List</h2>
+
+  <div class = "table-responsive">
+    <table class = "table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>is Faculty</th>
+        <th>is Admin</th>
+        <th colspan="6"></th>
+
+      </tr>
+
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.isFaculty %></td>
+            <td><%= user.isAdmin %></td>
+            <td><%= link_to 'Show', user_path(user) %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= link_to 'Destroy', user_path(user),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+    </table>
+    <ul class="pagination">
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+    </ul>
+  </div>
+
+  <br>
+
+  <%= link_to new_user_path, class: 'btn btn-success' do %>
+    <i class="glyphicon glyphicon-plus"></i> Add User
+  <% end %>
+
+</div>

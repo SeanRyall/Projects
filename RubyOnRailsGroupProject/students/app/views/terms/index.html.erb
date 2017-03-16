@@ -1,0 +1,20 @@
+<h1>Terms List</h1>
+
+<%= link_to 'New term', new_term_path %></br></br>
+ 
+<table border = 1>
+  <tr>
+    <th>Term/Year</th>
+  </tr>
+ 
+  <% @terms.each do |term| %>
+    <tr>
+      <td><%= term.name %> <%=" "%><%= term.year %></td>
+      <td><%= link_to 'Show', term_path(term) %></td>
+      <td><%= link_to 'Edit', edit_term_path(term) %></td>
+      <td><%= link_to 'Destroy', term_path(term),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
